@@ -18,6 +18,10 @@
   --danger: #E25858;
 }
 
+:focus {
+  outline: 2px solid var(--purple-400);
+}
+
 * {
   margin: 0;
   padding: 0;
