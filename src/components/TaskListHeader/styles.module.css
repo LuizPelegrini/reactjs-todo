@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5625rem;
+}
+
+.createdTasks,
+.completedTasks {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.createdTasks > strong,
+.completedTasks > strong {
+  margin-right: 0.5rem;
+}
+
+.createdTasks > span,
+.completedTasks > span {
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+}
+
+.createdTasks {
+  color: var(--blue-300);
+}
+
+.completedTasks {
+  color: var(--purple-300);
+}

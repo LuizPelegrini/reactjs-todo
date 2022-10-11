@@ -1,6 +1,5 @@
 .container {}
 
-
 .wrapper {
   max-width: 46rem;
   margin: 0 auto;
@@ -12,6 +11,8 @@
   gap: 0.5rem;
 
   height: 3.375rem;
+  margin-top: calc(0px - 1.6875rem);
+  margin-bottom: 4.0625rem;
 }
 
 .taskInput {
@@ -50,4 +51,3 @@
 .addTaskForm > button[type=submit]:hover {
   background-color: var(--blue-300);
 }
-
