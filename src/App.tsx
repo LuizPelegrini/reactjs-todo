@@ -3,6 +3,7 @@ import { PlusCircle } from 'phosphor-react';
 
 import { Header } from './components/Header';
 import { TaskListHeader } from './components/TaskListHeader';
+import { TaskList } from './components/TaskList';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         </form>
 
         <TaskListHeader />
+
+        <TaskList />
       </main>
     </div>
   )
