@@ -21,6 +21,7 @@
   background-color: transparent;
   -webkit-appearance: none;
   cursor: pointer;
+  margin-top: 0.125rem; /* so the checkbox is aligned to the label inner text */
 
   transition: background-color 0.1s, border-color 0.1s;
 }
@@ -36,9 +37,17 @@
   background-repeat: no-repeat;
 }
 
+.task > input[type=checkbox]:checked ~ label {
+  text-decoration: line-through;
+}
+
 .task > input[type=checkbox]:not(:checked):hover {
-  background-color: var(--blue-400);
-  opacity: 0.2;
+  background-color: var(--blue-400-transparent);
+}
+
+.task > input[type=checkbox]:checked:hover {
+  border-color: var(--purple-300);
+  background-color: var(--purple-300);
 }
 
 
@@ -46,6 +55,7 @@
   font-size: 0.875rem;
   line-height: 1.4;
   flex: 1;
+  cursor: pointer;
 }
 
 
