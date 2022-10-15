@@ -43,3 +43,10 @@
 .container > button[type=submit]:hover {
   background-color: var(--blue-300);
 }
+
+@media(max-width: 425px) {
+  .container {
+    flex-direction: column;
+    margin-bottom: 6rem;
+  }
+}
