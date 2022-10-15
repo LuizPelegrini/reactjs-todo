@@ -21,6 +21,9 @@ export function TaskCreateBar({ onCreateTask }: TaskCreateBarProps) {
 
     // notify parent component to add description
     onCreateTask(description);
+
+    // remove text from input upon submitting
+    setDescription('');
   }
 
   return (

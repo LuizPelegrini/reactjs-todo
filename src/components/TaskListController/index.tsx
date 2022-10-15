@@ -3,14 +3,9 @@ import { useState } from 'react';
 import { TaskCreateBar } from '../TaskCreateBar';
 import { TaskListHeader } from '../TaskListHeader';
 import { TaskList } from '../TaskList';
+import { Task } from '../../@types/Task';
 
 import styles from './styles.module.css';
-
-interface Task {
-  id: string;
-  description: string;
-  completed: boolean;
-}
 
 export function TaskListController () {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -30,7 +25,7 @@ export function TaskListController () {
   return (
     <main className={styles.container}>
       <TaskCreateBar onCreateTask={createNewTask}/>
-      <TaskListHeader />
+      <TaskListHeader taskList={tasks}/>
       <TaskList />
     </main>
   );
