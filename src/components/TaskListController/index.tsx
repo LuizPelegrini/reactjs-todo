@@ -22,11 +22,32 @@ export function TaskListController () {
     setTasks([...tasks, newTask]);
   }
 
+  function changeTaskCompleteStatus(id: string, isCompleted: boolean) {
+    const taskList = tasks.map(task => {
+      if(task.id === id){
+        task.completed = isCompleted;
+      }
+
+      return task;
+    });
+
+    setTasks(taskList);
+  }
+
+  function deleteTask (id: string) {
+    const taskListWithoutDeletedTask = tasks.filter(task => task.id !== id);
+    setTasks(taskListWithoutDeletedTask);
+  }
+
   return (
     <main className={styles.container}>
       <TaskCreateBar onCreateTask={createNewTask}/>
       <TaskListHeader taskList={tasks}/>
-      <TaskList />
+      <TaskList
+        taskList={tasks}
+        onDeleteTask={deleteTask}
+        onChangeTaskCompleteStatus={changeTaskCompleteStatus}
+      />
     </main>
   );
 }

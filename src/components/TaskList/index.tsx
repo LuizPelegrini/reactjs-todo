@@ -1,17 +1,27 @@
 import { TaskListItem } from '../TaskListItem';
-
+import { Task } from '../../@types/Task';
 import styles from './styles.module.css';
 
-export function TaskList() {
+interface TaskListProps {
+  taskList: Task[];
+  onDeleteTask: (id: string) => void;
+  onChangeTaskCompleteStatus: (id: string, isCompleted: boolean) => void;
+}
+
+export function TaskList({ taskList, onDeleteTask, onChangeTaskCompleteStatus }: TaskListProps) {
   return (
     <ul className={styles.container}>
-      {/*
-        ['1', '2', '3'].map(elem =>
-          <li className={styles.taskItem} key={elem}>
-            <TaskListItem id={elem}/>
+      {
+        taskList.map(task =>
+          <li className={styles.taskItem} key={task.id}>
+            <TaskListItem
+              task={task}
+              onDeleteTask={onDeleteTask}
+              onChangeTaskCompleteStatus={onChangeTaskCompleteStatus}
+            />
           </li>
         )
-        */}
+      }
     </ul>
   );
 }
