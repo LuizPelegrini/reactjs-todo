@@ -41,7 +41,7 @@ export function TaskListController () {
   }
 
   return (
-    <main className={styles.container}>
+    <main className="global__wrapper">
       <TaskCreateBar onCreateTask={createNewTask}/>
       <TaskListHeader taskList={tasks}/>
       {
