@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { TaskCreateBar } from '../TaskCreateBar';
 import { TaskListHeader } from '../TaskListHeader';
 import { TaskList } from '../TaskList';
+import { NoTaskItems } from '../NoTaskItems';
 import { Task } from '../../@types/Task';
 
 import styles from './styles.module.css';
@@ -43,11 +44,15 @@ export function TaskListController () {
     <main className={styles.container}>
       <TaskCreateBar onCreateTask={createNewTask}/>
       <TaskListHeader taskList={tasks}/>
-      <TaskList
-        taskList={tasks}
-        onDeleteTask={deleteTask}
-        onChangeTaskCompleteStatus={changeTaskCompleteStatus}
-      />
+      {
+        tasks.length > 0 ?
+          <TaskList
+            taskList={tasks}
+            onDeleteTask={deleteTask}
+            onChangeTaskCompleteStatus={changeTaskCompleteStatus}
+          /> :
+          <NoTaskItems />
+      }
     </main>
   );
 }
