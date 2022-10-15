@@ -15,9 +15,21 @@ interface Task {
 export function TaskListController () {
   const [tasks, setTasks] = useState<Task[]>([]);
 
+  function createNewTask(description: string) {
+    // simple way to generate an hexadecimal id
+    const id = Math.floor(Math.random() * 10000).toString(16);
+    const newTask: Task = {
+      id,
+      description,
+      completed: false,
+    };
+
+    setTasks([...tasks, newTask]);
+  }
+
   return (
     <main className={styles.container}>
-      <TaskCreateBar />
+      <TaskCreateBar onCreateTask={createNewTask}/>
       <TaskListHeader />
       <TaskList />
     </main>
