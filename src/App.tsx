@@ -11,7 +11,9 @@ function App() {
       <div className={styles.tasks}>
         <TaskListController />
       </div>
-      <Footer />
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   )
 }

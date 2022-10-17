@@ -1,5 +1,7 @@
 .container {
   list-style: none;
+  max-height: 31.25rem;
+  overflow-y: auto;
 }
 
 .taskItem + .taskItem {
