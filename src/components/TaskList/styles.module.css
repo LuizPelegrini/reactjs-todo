@@ -4,6 +4,15 @@
   overflow-y: auto;
 }
 
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .taskItem + .taskItem {
   margin-top: 0.75rem;
 }
